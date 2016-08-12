@@ -10,7 +10,7 @@ This survey is intended to ask the user relevant questions pertaining to program
 
 ##Requirements
 
-* A modern web browser (ie: Chrome, Firefox, Edge)
+* A modern web browser (ie: Chrome, Firefox, Edge, Safari)
 * Internet access
 
 ##Link
