@@ -1,3 +1,6 @@
+var talleyScore = function(response1,response2,response3,response4,response5){
+
+}
 $(document).ready(function(){
   //When form is submitted score survey
   $("button#submit").click(function(){
