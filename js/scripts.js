@@ -64,8 +64,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     phpScore = phpScore - 2;
     cSharpScore = cSharpScore + 5
     javaScore = javaScore - 2;
-  }
-
+  };
 };
 
 $(document).ready(function(){
