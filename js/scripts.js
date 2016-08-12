@@ -72,7 +72,9 @@ $(document).ready(function(){
   
   $("#begin").click(function(){
     $("#greeting").fadeOut();
+    $("#instructions").delay(500);
     $("#instructions").fadeIn();
+    $("#question1").delay(500);
     $("#question1").fadeIn();
   });
 
@@ -85,7 +87,8 @@ $(document).ready(function(){
     var answer4 = $("input:radio[name=answer4]:checked").val();
     var answer5 = $("input:radio[name=answer5]:checked").val();
     //Hide last question
-    $("question5").fadeOut();
+    $("#instructions").fadeOut(500);
+    $("#question5").fadeOut();
     //Set score variables to zero
     initScore();
     //Talley scores
@@ -100,21 +103,25 @@ $(document).ready(function(){
   $("#advance1").click(function(){
     event.preventDefault();
     $("#question1").fadeOut();
+    $("#question2").delay(500);
     $("#question2").fadeIn();
   });
     $("#advance2").click(function(){
     event.preventDefault();
     $("#question2").fadeOut();
+    $("#question3").delay(500);
     $("#question3").fadeIn();
   });
   $("#advance3").click(function(){
     event.preventDefault();
     $("#question3").fadeOut();
+    $("#question4").delay(500);
     $("#question4").fadeIn();
   });
   $("#advance4").click(function(){
     event.preventDefault();
     $("#question4").fadeOut();
+    $("#question5").delay(500);
     $("#question5").fadeIn();
   });
 });
