@@ -11,9 +11,33 @@ var initScore = function(){
  javaScore = 0;
 
 };
-var suggestTrack = function(){
 
+var suggestTrack = function(){
+  if (cSharpScore > phpScore){
+    if (cSharpScore > rubyScore){
+      if (cSharpScore > javaScore){
+        $("#microsoft").delay(500);
+        $("#microsoft").fadeIn();
+      }
+    }
+  }
+  else if (phpScore > javaScore){
+    if (phpScore > rubyScore){
+      $("#php").delay(500);
+      $("#php").fadeIn();
+
+    }
+  }
+  else if (rubyScore > javaScore){
+    $("#ruby").delay(500);
+    $("#ruby").fadeIn();
+  }
+  else {
+    $("#java").delay(500);
+    $("#java").fadeIn();
+  };
 };
+  
 
 var talleyScore = function(response1, response2,response3,response4,response5){
   if (response1 === "agree"){
@@ -47,7 +71,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   if (response4 === "agree"){
     rubyScore = rubyScore + 5;
     phpScore = phpScore - 2;
-    cSharpScore = cSharpScore - 2
+    cSharpScore = cSharpScore - 2;
     javaScore = javaScore - 2;
   }
   else if (response4 === "disagree"){
@@ -65,7 +89,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   else if (response5 === "disagree"){
     rubyScore = rubyScore - 2;
     phpScore = phpScore - 2;
-    cSharpScore = cSharpScore + 5
+    cSharpScore = cSharpScore + 5;
     javaScore = javaScore - 2;
   };
 }
@@ -100,6 +124,7 @@ $(document).ready(function(){
     console.log(phpScore);
     console.log(rubyScore);
     console.log(javaScore);
+    suggestTrack();
 
   });
 // Code for Next buttons
