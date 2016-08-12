@@ -10,7 +10,10 @@ var initScore = function(){
  rubyScore = 0;
  javaScore = 0;
 
-}
+};
+var suggestTrack = function(){
+
+};
 
 var talleyScore = function(response1, response2,response3,response4,response5){
   if (response1 === "agree"){
@@ -20,7 +23,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   else if (response1 === "disagree"){
     cSharpScore = cSharpScore - 5;
     javaScore = javaScore -3;
-  }
+  };
   if (response2 === "agree"){
     phpScore = phpScore + 5;
     rubyScore = rubyScore + 3;
@@ -28,7 +31,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   }
   else if (response2 === "disagree"){
     phpScore = phpScore - 3;    
-  }
+  };
   if (response3 === "agree"){
     phpScore = phpScore + 5;
     rubyScore = rubyScore - 3;
@@ -40,7 +43,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     rubyScore = rubyScore + 3;
     cSharpScore = cSharpScore + 3;
     javaScore = javaScore + 3;
-  }
+  };
   if (response4 === "agree"){
     rubyScore = rubyScore + 5;
     phpScore = phpScore - 2;
@@ -52,7 +55,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     phpScore = phpScore +2;
     cSharpScore = cSharpScore + 2
     javaScore = javaScore + 2;
-  }
+  };
   if (response5 === "agree"){
     rubyScore = rubyScore + 5;
     phpScore = phpScore +5;
@@ -64,7 +67,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     phpScore = phpScore - 2;
     cSharpScore = cSharpScore + 5
     javaScore = javaScore - 2;
-  }
+  };
 }
 
 $(document).ready(function(){
