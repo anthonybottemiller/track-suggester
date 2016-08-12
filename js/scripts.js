@@ -13,22 +13,22 @@ var initScore = function(){
 };
 
 var suggestTrack = function(){
-  if (cSharpScore > phpScore){
-    if (cSharpScore > rubyScore){
-      if (cSharpScore > javaScore){
+  if (cSharpScore >= phpScore){
+    if (cSharpScore >= rubyScore){
+      if (cSharpScore >= javaScore){
         $("#microsoft").delay(500);
         $("#microsoft").fadeIn();
       }
     }
   }
-  else if (phpScore > javaScore){
-    if (phpScore > rubyScore){
+  else if (phpScore >= javaScore){
+    if (phpScore >= rubyScore){
       $("#php").delay(500);
       $("#php").fadeIn();
 
     }
   }
-  else if (rubyScore > javaScore){
+  else if (rubyScore >= javaScore){
     $("#ruby").delay(500);
     $("#ruby").fadeIn();
   }
@@ -96,17 +96,6 @@ var talleyScore = function(response1, response2,response3,response4,response5){
 
 $(document).ready(function(){
   //When button clicked initialize answer variables
-  
-  $("#begin").click(function(){
-    $("#greeting").fadeOut();
-    $("#instructions").delay(500);
-    $("#instructions").fadeIn();
-    $("#question1").delay(500);
-    $("#question1").fadeIn();
-  });
-
-
-
   $("#submit").click(function(){
     var answer1 = $("input:radio[name=answer1]:checked").val();
     var answer2 = $("input:radio[name=answer2]:checked").val();
@@ -120,12 +109,14 @@ $(document).ready(function(){
     initScore();
     //Talley scores
     talleyScore(answer1,answer2,answer3,answer4,answer5);
-    console.log(cSharpScore);
-    console.log(phpScore);
-    console.log(rubyScore);
-    console.log(javaScore);
     suggestTrack();
-
+  });
+  $("#begin").click(function(){
+    $("#greeting").fadeOut();
+    $("#instructions").delay(500);
+    $("#instructions").fadeIn();
+    $("#question1").delay(500);
+    $("#question1").fadeIn();
   });
 // Code for Next buttons
   $("#advance1").click(function(){
