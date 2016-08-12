@@ -12,23 +12,60 @@ var initScore = function(){
 
 }
 
-var talleyScore = function(response1, response2){
-  if(response1 === "agree"){
+var talleyScore = function(response1, response2,response3,response4,response5){
+  if (response1 === "agree"){
     javaScore = javaScore + 5;
     cSharpScore = cSharpScore + 5;
   }
-  else if(response1 === "disagree") {
+  else if (response1 === "disagree"){
     cSharpScore = cSharpScore - 5;
     javaScore = javaScore -3;
   };
-  if(response2 === "agree"){
+  if (response2 === "agree"){
     phpScore = phpScore + 5;
     rubyScore = rubyScore + 3;
     javaScore = javaScore + 3;
   }
-  else if(response2 === "disagree"){
+  else if (response2 === "disagree"){
     phpScore = phpScore - 3;    
   };
+  if (response3 === "agree"){
+    phpScore = phpScore + 5;
+    rubyScore = rubyScore - 3;
+    cSharpScore = cSharpScore -3;
+    javaScore = javaScore -3;
+  }
+  else if (response3 === "disagree"){
+    phpScore = phpScore - 3;
+    rubyScore = rubyScore + 3;
+    cSharpScore = cSharpScore + 3;
+    javaScore = javaScore + 3;
+  };
+  if (response4 === "agree"){
+    rubyScore = rubyScore + 5;
+    phpScore = phpScore - 2;
+    cSharpScore = cSharpScore - 2
+    javaScore = javaScore - 2;
+  }
+  else if (response4 === "disagree"){
+    rubyScore = rubyScore - 5;
+    phpScore = phpScore +2;
+    cSharpScore = cSharpScore + 2
+    javaScore = javaScore + 2;
+  };
+  if (response5 === "agree"){
+    rubyScore = rubyScore + 5;
+    phpScore = phpScore +5;
+    cSharpScore = cSharpScore - 100;
+    javaScore = javaScore + 5;    
+  }
+  else if (response5 === "disagree"){
+    rubyScore = rubyScore - 2;
+    phpScore = phpScore - 2;
+    cSharpScore = cSharpScore + 5
+    javaScore = javaScore - 2;
+  }
+
 };
 
 $(document).ready(function(){
@@ -44,7 +81,11 @@ $(document).ready(function(){
     //Set score variables to zero
     initScore();
     //Talley scores
-    talleyScore(answer1,answer2);
+    talleyScore(answer1,answer2,answer3,answer4,answer5);
+    console.log(cSharpScore);
+    console.log(phpScore);
+    console.log(rubyScore);
+    console.log(javaScore);
 
   });
 });
