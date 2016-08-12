@@ -3,6 +3,10 @@ body {
   color: white;
 }
 
+h1 {
+  color: black;
+}
+
 h2 {
   width: auto;
   color: black;
@@ -23,3 +27,6 @@ h2 {
   border-radius:10px;
 }
 
+.answer-input {
+  text-align: left;
+}
