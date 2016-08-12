@@ -69,6 +69,13 @@ var talleyScore = function(response1, response2,response3,response4,response5){
 
 $(document).ready(function(){
   //When button clicked initialize answer variables
+  $("button#begin").click(function(){
+    console.log("Button Pressed")
+    $("#greeting").toggle();
+    $("#instructions").toggle();
+    $("#question1").toggle();
+  });
+
   $("button#submit").click(function(){
     console.log("button pressed")
     var answer1 = $("input:radio[name=answer1]:checked").val();

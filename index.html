@@ -1,143 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="js/jquery-3.1.0.js"></script>
-  <script src="js/scripts.js"></script>
-  <title>Track Suggester</title>
-</head>
-<body>
-  <div class="container">
-  <h1>Epicodus Track Suggester</h1>
-  <p>Hi! if you answer all of these questions we can recommend a track at Epicodus for you.</p>
-    <div class="col-md-6">
-      <form id="survey">
-        <div id="question1" class="form-group">
-          <h2>Question 1:</h2>
-          <p>Do you like the idea of working for a large enterprise such as Microsoft or Oracle?</p>
-          <div class="answer-input">
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer1" value="agree">
-              Agree
-              </label>
-            </div>          
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer1" value="neutral">
-              Neutral
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer1" value="disagree">
-              Disagree
-              </label>
-            </div>
-          </div>
-        </div>
-        <div id="question2" class="form-group">
-          <h2>Question 2:</h2>
-          <p>Would you be interested in working for a firm that creates Websites for clients?</p>
-          <div class="answer-input">
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer2" value="agree">
-              Agree
-              </label>
-            </div>          
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer2" value="neutral">
-              Neutral
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer2" value="disagree">
-              Disagree
-              </label>
-            </div>
-          </div>
-        </div>
-        <div id="question3" class="form-group">
-          <h2>Question 3:</h2>
-          <p>Are you interested in developing content focused Websites?</p>
-          <div class="answer-input">
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer3" value="agree">
-              Agree
-              </label>
-            </div>          
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer3" value="neutral">
-              Neutral
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer3" value="disagree">
-              Disagree
-              </label>
-            </div>
-          </div>
-        </div>
-        <div id="question4" class="form-group">
-          <h2>Question 4:</h2>
-          <p>Do you wish to focus on interactive web applications?</p>
-          <div class="answer-input">
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer4" value="agree">
-              Agree
-              </label>
-            </div>          
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer4" value="neutral">
-              Neutral
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer4" value="disagree">
-              Disagree
-              </label>
-            </div>
-          </div>
-        </div>
-        <div id="question5" class="form-group">
-          <h2>Question 5:</h2>
-          <p>Is it important to you personally to avoid the Microsoft ecosystem?</p>
-          <div class="answer-input">
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer5" value="agree">
-              Agree
-              </label>
-            </div>          
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer5" value="neutral">
-              Neutral
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="answer5" value="disagree">
-              Disagree
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="button-container">
-          <button id="submit" type="button" class="btn btn-primary btn-lg"><b>Click here</b> to see what track you may enjoy!</button>
-        </div>
-      </form>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Track Suggester</title>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Epicodus Track Suggester</h1>
+    <div id="greeting">
+      <p>Hi there! This survey will help you pick a track at <a href="http://www.epicodus.com">Epicodus. </a></p>
+      <button id="begin" class="btn btn-success btn-lg">Begin!</button>
     </div>
-  </div>
-</body>
+    <div id="instructions">
+      <p>Thanks in advance for taking this survey! Just click on an answer for each question. When finished click or tap the button on the bottom</p>
+    </div>
+      <div class="col-md-6">
+        <form id="survey">
+          <div id="question1" class="form-group">
+            <h2>Question 1:</h2>
+            <p>Do you like the idea of working for a large enterprise such as Microsoft or Oracle?</p>
+            <div class="answer-input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer1" value="agree">
+                Agree
+                </label>
+              </div>          
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer1" value="neutral">
+                Neutral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer1" value="disagree">
+                Disagree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="question2" class="form-group">
+            <h2>Question 2:</h2>
+            <p>Would you be interested in working for a firm that creates Websites for clients?</p>
+            <div class="answer-input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer2" value="agree">
+                Agree
+                </label>
+              </div>          
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer2" value="neutral">
+                Neutral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer2" value="disagree">
+                Disagree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="question3" class="form-group">
+            <h2>Question 3:</h2>
+            <p>Are you interested in developing content focused Websites?</p>
+            <div class="answer-input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer3" value="agree">
+                Agree
+                </label>
+              </div>          
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer3" value="neutral">
+                Neutral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer3" value="disagree">
+                Disagree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="question4" class="form-group">
+            <h2>Question 4:</h2>
+            <p>Do you wish to focus on interactive web applications?</p>
+            <div class="answer-input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer4" value="agree">
+                Agree
+                </label>
+              </div>          
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer4" value="neutral">
+                Neutral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer4" value="disagree">
+                Disagree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="question5" class="form-group">
+            <h2>Question 5:</h2>
+            <p>Is it important to you personally to avoid the Microsoft ecosystem?</p>
+            <div class="answer-input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer5" value="agree">
+                Agree
+                </label>
+              </div>          
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer5" value="neutral">
+                Neutral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="answer5" value="disagree">
+                Disagree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button id="submit" type="button" class="btn btn-primary btn-lg"><b>Click here</b> to see what track you may enjoy!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

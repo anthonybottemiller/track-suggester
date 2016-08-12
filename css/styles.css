@@ -1,5 +1,5 @@
 body {
-  background-color: #1AFF16;
+  background-color: #3710E8;
   color: white;
 }
 
@@ -20,13 +20,24 @@ h2 {
   text-align: center;
 }
 
+#instructions {
+  display: none;
+}
+
 .form-group {
   padding: 10px;
   background-color: #5570FF;
   border: 5px solid #5570FF;
   border-radius:10px;
+  display: none;
 }
 
 .answer-input {
   text-align: left;
+}
+#submit {
+  display: none;
+}
+a {
+  color: white;
 }
