@@ -20,7 +20,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   else if (response1 === "disagree"){
     cSharpScore = cSharpScore - 5;
     javaScore = javaScore -3;
-  };
+  }
   if (response2 === "agree"){
     phpScore = phpScore + 5;
     rubyScore = rubyScore + 3;
@@ -28,7 +28,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
   }
   else if (response2 === "disagree"){
     phpScore = phpScore - 3;    
-  };
+  }
   if (response3 === "agree"){
     phpScore = phpScore + 5;
     rubyScore = rubyScore - 3;
@@ -40,7 +40,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     rubyScore = rubyScore + 3;
     cSharpScore = cSharpScore + 3;
     javaScore = javaScore + 3;
-  };
+  }
   if (response4 === "agree"){
     rubyScore = rubyScore + 5;
     phpScore = phpScore - 2;
@@ -52,7 +52,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     phpScore = phpScore +2;
     cSharpScore = cSharpScore + 2
     javaScore = javaScore + 2;
-  };
+  }
   if (response5 === "agree"){
     rubyScore = rubyScore + 5;
     phpScore = phpScore +5;
@@ -64,26 +64,28 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     phpScore = phpScore - 2;
     cSharpScore = cSharpScore + 5
     javaScore = javaScore - 2;
-  };
-};
+  }
+}
 
 $(document).ready(function(){
   //When button clicked initialize answer variables
-  $("button#begin").click(function(){
-    console.log("Button Pressed")
-    $("#greeting").toggle();
-    $("#instructions").toggle();
-    $("#question1").toggle();
+  
+  $("#begin").click(function(){
+    $("#greeting").fadeOut();
+    $("#instructions").fadeIn();
+    $("#question1").fadeIn();
   });
 
-  $("button#submit").click(function(){
-    console.log("button pressed")
+
+
+  $("#submit").click(function(){
     var answer1 = $("input:radio[name=answer1]:checked").val();
-    console.log(answer1);
     var answer2 = $("input:radio[name=answer2]:checked").val();
     var answer3 = $("input:radio[name=answer3]:checked").val();
     var answer4 = $("input:radio[name=answer4]:checked").val();
     var answer5 = $("input:radio[name=answer5]:checked").val();
+    //Hide last question
+    $("question5").fadeOut();
     //Set score variables to zero
     initScore();
     //Talley scores
@@ -93,5 +95,26 @@ $(document).ready(function(){
     console.log(rubyScore);
     console.log(javaScore);
 
+  });
+// Code for Next buttons
+  $("#advance1").click(function(){
+    event.preventDefault();
+    $("#question1").fadeOut();
+    $("#question2").fadeIn();
+  });
+    $("#advance2").click(function(){
+    event.preventDefault();
+    $("#question2").fadeOut();
+    $("#question3").fadeIn();
+  });
+  $("#advance3").click(function(){
+    event.preventDefault();
+    $("#question3").fadeOut();
+    $("#question4").fadeIn();
+  });
+  $("#advance4").click(function(){
+    event.preventDefault();
+    $("#question4").fadeOut();
+    $("#question5").fadeIn();
   });
 });
