@@ -1,4 +1,4 @@
-//Initialize scoring variables
+//Initialize  global scoring variables
 var cSharpScore = 0;
 var phpScore = 0;
 var rubyScore = 0;
@@ -12,7 +12,7 @@ var initScore = function(){
 
 }
 
-var talleyScore = function(response1){
+var talleyScore = function(response1, response2){
   if(response1 === "agree"){
     javaScore = javaScore + 5;
     cSharpScore = cSharpScore + 5;
@@ -21,9 +21,18 @@ var talleyScore = function(response1){
     cSharpScore = cSharpScore - 5;
     javaScore = javaScore -3;
   };
+  if(response2 === "agree"){
+    phpScore = phpScore + 5;
+    rubyScore = rubyScore + 3;
+    javaScore = javaScore + 3;
+  }
+  else if(response2 === "disagree"){
+    phpScore = phpScore - 3;    
+  };
 };
+
 $(document).ready(function(){
-  //When form is submitted score survey
+  //When button clicked initialize answer variables
   $("button#submit").click(function(){
     console.log("button pressed")
     var answer1 = $("input:radio[name=answer1]:checked").val();
@@ -32,8 +41,10 @@ $(document).ready(function(){
     var answer3 = $("input:radio[name=answer3]:checked").val();
     var answer4 = $("input:radio[name=answer4]:checked").val();
     var answer5 = $("input:radio[name=answer5]:checked").val();
+    //Set score variables to zero
     initScore();
-    talleyScore(answer1);
+    //Talley scores
+    talleyScore(answer1,answer2);
 
   });
 });
