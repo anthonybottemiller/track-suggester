@@ -1,0 +1,25 @@
+body {
+  background-color: #1AFF16;
+  color: white;
+}
+
+h2 {
+  width: auto;
+  color: black;
+  background-color: #08E8DB;
+  border: 5px solid #08E8DB;
+  border-radius:10px;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.form-group {
+  padding: 10px;
+  background-color: #5570FF;
+  border: 5px solid #5570FF;
+  border-radius:10px;
+}
+
