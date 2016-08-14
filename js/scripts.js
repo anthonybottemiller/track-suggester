@@ -52,7 +52,7 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     cSharpScore = cSharpScore + 5;
     javaScore = javaScore - 2;
   };
-}
+};
 //Function to evaluate scores and suggest a track to user by unhiding HTML elements
 var suggestTrack = function(){
   if (cSharpScore >= phpScore && cSharpScore >= rubyScore && cSharpScore >= javaScore){
