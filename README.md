@@ -2,7 +2,7 @@
 
 #####Simple survey to suggest a track at Epicodus
 
-###By Anthony J Bottemiller
+###By Anthony J Bottemiller 8/14/2016
 
 ##Description
 
@@ -14,7 +14,7 @@ This survey is intended to ask the user relevant questions pertaining to program
 * Internet access
 
 ##Link
-[Click here to view]()
+[Click here to view](https://anthonybottemiller.github.io/track-suggester/)
 
 ##Technologies Used
 
