@@ -39,3 +39,7 @@ h2 {
 a {
   color: white;
 }
+
+.recommended-track p {
+  font-size: 20px;
+}

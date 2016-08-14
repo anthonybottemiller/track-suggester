@@ -1,44 +1,4 @@
-//Initialize  global scoring variables
-var cSharpScore = 0;
-var phpScore = 0;
-var rubyScore = 0;
-var javaScore = 0;
-
-var initScore = function(){
- cSharpScore = 0;
- phpScore = 0;
- rubyScore = 0;
- javaScore = 0;
-
-};
-
-var suggestTrack = function(){
-  if (cSharpScore >= phpScore){
-    if (cSharpScore >= rubyScore){
-      if (cSharpScore >= javaScore){
-        $("#microsoft").delay(500);
-        $("#microsoft").fadeIn();
-      }
-    }
-  }
-  else if (phpScore >= javaScore){
-    if (phpScore >= rubyScore){
-      $("#php").delay(500);
-      $("#php").fadeIn();
-
-    }
-  }
-  else if (rubyScore >= javaScore){
-    $("#ruby").delay(500);
-    $("#ruby").fadeIn();
-  }
-  else {
-    $("#java").delay(500);
-    $("#java").fadeIn();
-  };
-};
-  
-
+//Function to score users answers to questions
 var talleyScore = function(response1, response2,response3,response4,response5){
   if (response1 === "agree"){
     javaScore = javaScore + 5;
@@ -93,24 +53,36 @@ var talleyScore = function(response1, response2,response3,response4,response5){
     javaScore = javaScore - 2;
   };
 }
-
+//Function to evaluate scores and suggest a track to user by unhiding HTML elements
+var suggestTrack = function(){
+  if (cSharpScore >= phpScore && cSharpScore >= rubyScore && cSharpScore >= javaScore){
+        console.log("Got to csharp condition");
+        $("#microsoft").delay(500);
+        $("#microsoft").fadeIn();
+      }
+  else if (phpScore >= javaScore && phpScore >= rubyScore){
+    console.log("Got to java condition");
+      $("#php").delay(500);
+      $("#php").fadeIn();
+  }
+  else if (rubyScore >= javaScore){
+    console.log("Got to ruby condition");
+    $("#ruby").delay(500);
+    $("#ruby").fadeIn();
+  }
+  else {
+    console.log("Got to java condition");
+    $("#java").delay(500);
+    $("#java").fadeIn();
+  };
+};
+//Initialize  global scoring variables
+var cSharpScore = 0;
+var phpScore = 0;
+var rubyScore = 0;
+var javaScore = 0;
+//When document is loaded and ready
 $(document).ready(function(){
-  //When button clicked initialize answer variables
-  $("#submit").click(function(){
-    var answer1 = $("input:radio[name=answer1]:checked").val();
-    var answer2 = $("input:radio[name=answer2]:checked").val();
-    var answer3 = $("input:radio[name=answer3]:checked").val();
-    var answer4 = $("input:radio[name=answer4]:checked").val();
-    var answer5 = $("input:radio[name=answer5]:checked").val();
-    //Hide last question
-    $("#instructions").fadeOut(500);
-    $("#question5").fadeOut();
-    //Set score variables to zero
-    initScore();
-    //Talley scores
-    talleyScore(answer1,answer2,answer3,answer4,answer5);
-    suggestTrack();
-  });
   $("#begin").click(function(){
     $("#greeting").fadeOut();
     $("#instructions").delay(500);
@@ -143,4 +115,19 @@ $(document).ready(function(){
     $("#question5").delay(500);
     $("#question5").fadeIn();
   });
-});
+  //When 'submit' button clicked initialize answer variables
+  $("#submit").click(function(){
+    var answer1 = $("input:radio[name=answer1]:checked").val();
+    var answer2 = $("input:radio[name=answer2]:checked").val();
+    var answer3 = $("input:radio[name=answer3]:checked").val();
+    var answer4 = $("input:radio[name=answer4]:checked").val();
+    var answer5 = $("input:radio[name=answer5]:checked").val();
+    //Hide last question
+    $("#instructions").fadeOut(500);
+    $("#question5").fadeOut();
+    //Talley scores
+    talleyScore(answer1,answer2,answer3,answer4,answer5);
+    //Suggest a track based on scores
+    suggestTrack();
+  });
+});  
