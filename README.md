@@ -14,7 +14,7 @@ This survey is intended to ask the user relevant questions pertaining to program
 * Internet access
 
 ##Link
-[Click here to view](https://anthonybottemiller.github.io/track-suggester/)
+[Click here to view]()
 
 ##Technologies Used
 
