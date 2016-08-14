@@ -56,8 +56,8 @@ var talleyScore = function(response1, response2,response3,response4,response5){
 //Function to evaluate scores and suggest a track to user by unhiding HTML elements
 var suggestTrack = function(){
   if (cSharpScore >= phpScore && cSharpScore >= rubyScore && cSharpScore >= javaScore){
-    $("#microsoft").fadeIn();
     $("#microsoft").delay(500);
+    $("#microsoft").fadeIn();
   }
   else if (phpScore >= javaScore && phpScore >= rubyScore){
     $("#php").delay(500);
@@ -119,7 +119,7 @@ $(document).ready(function(){
     var answer4 = $("input:radio[name=answer4]:checked").val();
     var answer5 = $("input:radio[name=answer5]:checked").val();
     //Hide last question
-    $("#instructions").fadeOut(500);
+    $("#instructions").fadeOut();
     $("#question5").fadeOut();
     //Talley scores
     talleyScore(answer1,answer2,answer3,answer4,answer5);
