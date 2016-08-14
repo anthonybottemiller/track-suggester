@@ -56,22 +56,18 @@ var talleyScore = function(response1, response2,response3,response4,response5){
 //Function to evaluate scores and suggest a track to user by unhiding HTML elements
 var suggestTrack = function(){
   if (cSharpScore >= phpScore && cSharpScore >= rubyScore && cSharpScore >= javaScore){
-        console.log("Got to csharp condition");
-        $("#microsoft").delay(500);
-        $("#microsoft").fadeIn();
-      }
+    $("#microsoft").fadeIn();
+    $("#microsoft").delay(500);
+  }
   else if (phpScore >= javaScore && phpScore >= rubyScore){
-    console.log("Got to java condition");
-      $("#php").delay(500);
-      $("#php").fadeIn();
+    $("#php").delay(500);
+    $("#php").fadeIn();
   }
   else if (rubyScore >= javaScore){
-    console.log("Got to ruby condition");
     $("#ruby").delay(500);
     $("#ruby").fadeIn();
   }
   else {
-    console.log("Got to java condition");
     $("#java").delay(500);
     $("#java").fadeIn();
   };
@@ -97,7 +93,7 @@ $(document).ready(function(){
     $("#question2").delay(500);
     $("#question2").fadeIn();
   });
-    $("#advance2").click(function(){
+  $("#advance2").click(function(){
     event.preventDefault();
     $("#question2").fadeOut();
     $("#question3").delay(500);
